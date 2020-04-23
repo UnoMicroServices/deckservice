@@ -3,10 +3,10 @@ const router = express.Router();
 
 const handler = require('../handlers/handler'); 
 
-router.post('/card', handler.insertANewCard);
+router.post('/deck', handler.insertANewCard);
 
-router.post('/cards', handler.insertAListOfCards);
+router.post('/decks', handler.insertAListOfCards);
 
-router.get('/card', handler.getAllCards);
+router.get('/deck', handler.getAllCards);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const repository = require("../repository/repository");
 
-exports.getAllCards = (req,res,next) => {
-    repository.getAllCards((err, cards) => {
+exports.getAllDecks = (req,res,next) => {
+    repository.getAllDecks((err, cards) => {
         if(err) return next(err);
         res.json(cards);
     });
@@ -14,18 +14,18 @@ exports.getAllCards = (req,res,next) => {
 //     });
 // }
 
-exports.insertANewCard = (req,res,next) => {
+exports.insertANewDeck = (req,res,next) => {
     let card = req.body;
-    repository.insertANewCard(card, (err, resp) => {
+    repository.insertANewDeck(card, (err, resp) => {
         if(err) return next(err);
         //res.status(201).set('Location', )
         res.json(resp);
     });
 }
 
-exports.insertAListOfCards = (req,res,next) => {
+exports.insertAListOfDecks = (req,res,next) => {
     let cards = req.body;
-    repository.insertAListOfCards(cards, (err, resp) => {
+    repository.insertAListOfDecks(cards, (err, resp) => {
         if(err) return next(err);
         //res.status(201).set('Location', )
         res.json(resp);
